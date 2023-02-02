@@ -10,7 +10,8 @@ import mysql.connector
 PII_FIELDS = ('name', 'email', 'phone', 'ssn', 'password')
 
 
-def filter_datum(fields: typing.List[str], redaction: str, message: str, separator: str) -> str:
+def filter_datum(fields: typing.List[str],
+                 redaction: str, message: str, separator: str) -> str:
     """filters log messages"""
     secret_words = [item.split('=')[1] for item in message.split(
         separator) if fields.count(item.split('=')[0]) != 0]
