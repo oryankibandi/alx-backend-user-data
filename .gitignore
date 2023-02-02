@@ -1,0 +1,7 @@
+# pycache
+__pycache__
+
+# _test file
+**/*-main.py
+**/*.csv
+main.py
