@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """Encrypts a password"""
 
-import typing
+
 import bcrypt
 
 
-def hash_password(password: str) -> typing.ByteString:
+def hash_password(password: str) -> bytes:
     """Hashes a password"""
     encoded = password.encode('utf-8')
     return bcrypt.hashpw(encoded, bcrypt.gensalt())
