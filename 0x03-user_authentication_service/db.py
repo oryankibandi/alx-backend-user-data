@@ -57,7 +57,7 @@ class DB:
                     raise NoResultFound
                 else:
                     return user
-        except:
+        except ValueError:
             raise InvalidRequestError
 
     def update_user(self, user_id: int, **kwargs) -> None:
@@ -67,7 +67,7 @@ class DB:
         try:
             for k, v in kwargs.items():
                 setattr(user, k, v)
-        except:
+        except ValueError:
             raise ValueError
 
         self._session.commit()
